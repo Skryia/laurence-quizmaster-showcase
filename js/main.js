@@ -48,7 +48,7 @@ $(function () {
 
   // Gallery via Ajax/JSON
   $.getJSON('data/gallery.json').done(function(items){
-    var $g = $('#gallery');
+    var $g = $('#galleryGrid');
     items.forEach(function(it, i){
       var $item = $('<a class="gallery-item" href="#"></a>')
         .attr('data-cat', it.category)
@@ -66,7 +66,7 @@ $(function () {
     var f = $(this).data('filter');
     $('#galleryFilters .filter').removeClass('active');
     $(this).addClass('active');
-    $('#gallery .gallery-item').each(function(){
+    $('#galleryGrid .gallery-item').each(function(){
       var match = f === 'all' || $(this).data('cat') === f;
       $(this).css('display', match ? '' : 'none');
     });
@@ -74,7 +74,7 @@ $(function () {
 
   // Lightbox
   var $lb = $('#lightbox'), $lbImg = $lb.find('img');
-  $('#gallery').on('click', '.gallery-item', function(e){
+  $('#galleryGrid').on('click', '.gallery-item', function(e){
     e.preventDefault();
     $lbImg.attr('src', $(this).data('full'));
     $lb.addClass('open').attr('aria-hidden','false');
