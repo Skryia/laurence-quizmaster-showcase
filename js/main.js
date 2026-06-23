@@ -53,7 +53,6 @@ $(function () {
       var $item = $('<a class="gallery-item" href="#"></a>')
         .attr('data-cat', it.category)
         .attr('data-full', it.src);
-      if (i % 5 === 0) $item.addClass('tall');
       var $img = $('<img alt="">').attr('loading','lazy').attr('alt', it.alt || '');
       $img.on('load', function(){ $(this).addClass('loaded'); });
       $img.attr('src', it.thumb || it.src);
