@@ -56,7 +56,7 @@ $(function () {
       if (i % 5 === 0) $item.addClass('tall');
       var $img = $('<img alt="">').attr('loading','lazy').attr('alt', it.alt || '');
       $img.on('load', function(){ $(this).addClass('loaded'); });
-      $img.attr('src', it.src);
+      $img.attr('src', it.thumb || it.src);
       $item.append($img);
       $g.append($item);
     });
