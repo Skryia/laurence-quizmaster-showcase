@@ -1,4 +1,4 @@
 [run]
 dev = "sh -c 'python3 -m http.server 8080 --bind 0.0.0.0'"
-"build:dev" = "true"
-build = "true"
+"build:dev" = "sh -c 'mkdir -p dist && cp -r index.html css js data images dist/'"
+build = "sh -c 'mkdir -p dist && cp -r index.html css js data images dist/'"
